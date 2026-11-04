@@ -16,6 +16,10 @@ npm run build
 npm run preview
 ```
 
+## GitHub Pages
+
+Pushing to `work` or `main` triggers the GitHub Actions Pages deployment workflow. It builds this project as `https://ebinesh25.github.io/seinnortrio/` and enables GitHub Pages through the workflow if it is not already enabled. The repository's Actions settings must allow Pages deployments.
+
 ## Pages
 
 - `/` — music and official links

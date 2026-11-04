@@ -5,13 +5,14 @@ import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
 
 const pdfUrl = 'https://ugc.production.linktr.ee/88314dfa-f786-4f6e-a0f4-102a76d47062_TECH-RIDER-BandTHE-SIENNOR-TRIO.pdf';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 
 <SiteLayout title="Technical rider — Siennor Trio" description="View or download the Siennor Trio technical rider for venues and production teams.">
   <SiteHeader />
   <main class="wrap">
     <section class="document-hero" data-reveal>
-      <a class="back-link" href="/"><span>←</span> Back to Siennor Trio</a>
+      <a class="back-link" href={base}><span>←</span> Back to Siennor Trio</a>
       <h1 class="document-title">TECH<br /><span>RIDER.</span></h1>
       <p class="document-intro">Production information for venues and promoters. Open the official rider below or download it for your show file.</p>
       <div class="document-tools"><a class="button" href={pdfUrl} target="_blank" rel="noreferrer">Open PDF <span>↗</span></a><a class="text-link" href={pdfUrl} download>Download rider <span>↓</span></a></div>
