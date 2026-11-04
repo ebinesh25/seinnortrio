@@ -1,0 +1,27 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+
+const pdfUrl = 'https://ugc.production.linktr.ee/b10822fe-ad76-4146-b425-a38705826b26_Siennor-Trio-Artist-Profile.pdf.pdf';
+---
+
+<SiteLayout title="Artist profile — Siennor Trio" description="Read or download the official Siennor Trio artist profile and press kit.">
+  <SiteHeader />
+  <main class="wrap">
+    <section class="document-hero" data-reveal>
+      <a class="back-link" href="/"><span>←</span> Back to Siennor Trio</a>
+      <h1 class="document-title">ARTIST<br /><span>PROFILE.</span></h1>
+      <p class="document-intro">The official Siennor Trio artist profile. Open the original press kit below or download a copy for your files.</p>
+      <div class="document-tools"><a class="button" href={pdfUrl} target="_blank" rel="noreferrer">Open PDF <span>↗</span></a><a class="text-link" href={pdfUrl} download>Download profile <span>↓</span></a></div>
+    </section>
+    <section class="document-viewer" aria-label="Artist profile PDF">
+      <div class="viewer-caption"><span>PRESS MATERIAL / PDF</span><span>SIENNOR TRIO</span></div>
+      <object class="pdf-frame" data={pdfUrl} type="application/pdf" aria-label="Siennor Trio artist profile PDF">
+        <div class="document-fallback">Your browser cannot display the PDF inline. <a href={pdfUrl} target="_blank" rel="noreferrer">Open the artist profile PDF</a>.</div>
+      </object>
+    </section>
+  </main>
+  <SiteFooter />
+</SiteLayout>
