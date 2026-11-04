@@ -1,0 +1,64 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Siennor Trio — Independent sound, live and loud',
+  description = 'The official home of Siennor Trio. Find the music, artist profile and live technical rider.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11120f" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <script>
+      import { gsap } from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!reducedMotion) {
+        gsap.from('.site-header', { y: -24, opacity: 0, duration: 0.8, ease: 'power3.out' });
+        gsap.from('.hero-kicker, .hero-title, .hero-copy, .hero-actions', {
+          y: 32,
+          opacity: 0,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out',
+          delay: 0.18,
+        });
+        gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((element) => {
+          gsap.from(element, {
+            y: 28,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: element, start: 'top 88%' },
+          });
+        });
+        gsap.to('.orbit-mark', {
+          rotate: 360,
+          duration: 36,
+          ease: 'none',
+          repeat: -1,
+          transformOrigin: '50% 50%',
+        });
+      }
+
+      const year = document.querySelector<HTMLElement>('[data-year]');
+      if (year) year.textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>

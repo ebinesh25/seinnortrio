@@ -1,0 +1,77 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+---
+
+<SiteLayout>
+  <SiteHeader />
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <div class="hero-kicker eyebrow">Independent music · Live energy</div>
+        <h1 class="hero-title">SIENNOR<span>TRIO</span></h1>
+        <p>Three voices. One frequency. Step into the sound of Siennor Trio and find every official destination in one place.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://open.spotify.com/search/Siennor%20Trio" target="_blank" rel="noreferrer">Listen on Spotify <span>↗</span></a>
+          <a class="text-link" href="#resources">For promoters <span>↓</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Abstract orbiting sound-wave artwork">
+        <span class="art-note top">Sound in motion / 01</span>
+        <svg class="orbit-mark" viewBox="0 0 500 500" role="img" aria-label="Siennor Trio orbital emblem">
+          <defs><linearGradient id="wave" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d2ff4b"/><stop offset="1" stop-color="#f0f0e9" stop-opacity=".45"/></linearGradient></defs>
+          <g fill="none" stroke="url(#wave)" stroke-width="1.2" opacity=".85">
+            <ellipse cx="250" cy="250" rx="205" ry="94" transform="rotate(-34 250 250)" />
+            <ellipse cx="250" cy="250" rx="205" ry="94" transform="rotate(28 250 250)" />
+            <ellipse cx="250" cy="250" rx="205" ry="94" transform="rotate(90 250 250)" />
+            <circle cx="250" cy="250" r="112" opacity=".5" />
+            <circle cx="250" cy="250" r="20" fill="#d2ff4b" fill-opacity=".16" stroke="#d2ff4b" />
+          </g>
+          <g fill="#d2ff4b"><circle cx="250" cy="45" r="3"/><circle cx="431" cy="354" r="3"/><circle cx="72" cy="157" r="3"/></g>
+        </svg>
+        <span class="art-note bottom">Est. in sound / S.T.</span>
+      </div>
+    </section>
+
+    <div class="intro-strip" aria-hidden="true"><strong>SIENNOR TRIO</strong><span>Independent sound</span><span>●</span><span>Find your frequency</span><span>●</span><span>Music / people / movement</span><span>●</span><strong>SIENNOR TRIO</strong></div>
+
+    <section class="section wrap" id="listen" data-reveal>
+      <div class="section-head">
+        <div><div class="section-label">01 / Listening room</div><h2 class="section-title">Stay in the<br />frequency.</h2></div>
+        <p class="section-note">Find Siennor Trio on Spotify and follow the sound wherever it takes you.</p>
+      </div>
+      <div class="listen-card">
+        <div class="listen-main">
+          <div class="section-label">Now entering your rotation</div>
+          <h3>Press play.<br />Leave the noise behind.</h3>
+          <a class="button" href="https://open.spotify.com/search/Siennor%20Trio" target="_blank" rel="noreferrer">Open Spotify <span>↗</span></a>
+        </div>
+        <div class="listen-side">
+          <a class="platform-link" href="https://open.spotify.com/search/Siennor%20Trio" target="_blank" rel="noreferrer">Spotify <span>↗</span></a>
+          <a class="platform-link" href="https://www.youtube.com/results?search_query=Siennor+Trio" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
+          <a class="platform-link" href="https://linktr.ee/siennortrio" target="_blank" rel="noreferrer">All official links <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="resources" data-reveal>
+      <div class="section-head">
+        <div><div class="section-label">02 / The essentials</div><h2 class="section-title">For the ones<br />behind the show.</h2></div>
+        <p class="section-note">Press and production materials, ready when you are.</p>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="/artist-profile/"><span class="number">A — 01 / PRESS</span><div><h3>Artist profile</h3><p>Band information and press kit.</p></div><span class="arrow">↗</span></a>
+        <a class="resource-card" href="/tech-rider/"><span class="number">B — 02 / PRODUCTION</span><div><h3>Technical rider</h3><p>Stage and production requirements.</p></div><span class="arrow">↗</span></a>
+      </div>
+    </section>
+
+    <section class="cta-band wrap" data-reveal>
+      <h2>Have a stage in mind?</h2>
+      <a class="button" href="https://linktr.ee/siennortrio" target="_blank" rel="noreferrer">Bookings &amp; enquiries <span>↗</span></a>
+    </section>
+  </main>
+  <SiteFooter />
+  <aside class="social-dock" aria-label="Listening links"><a href="https://open.spotify.com/search/Siennor%20Trio" target="_blank" rel="noreferrer">Spotify</a><a href="https://linktr.ee/siennortrio" target="_blank" rel="noreferrer">Linktree</a></aside>
+</SiteLayout>
